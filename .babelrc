@@ -1,0 +1,22 @@
+/*
+In this configuration, we specify that we need Babel to transpile the latest JavaScript
+syntax with support for code in a Node.js environment and also React/JSX code.
+The react-hot-loader/babel plugin is required by the react-hot-loader
+module to compile React components.
+*/
+
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                /*Setting targets.node to current instructs Babel to compile against the current
+                version of Node and allows us to use expressions such as async/await in our
+                backend code.*/
+                "targets": { "node": "current" }
+            }
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": [ "react-hot-loader/babel" ]
+}
